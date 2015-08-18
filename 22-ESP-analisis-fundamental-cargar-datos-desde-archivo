@@ -1,0 +1,29 @@
+import matplotlib.pyplot as plt
+import numpy as np
+'''via 1: csv'''
+# import csv
+
+# x = []
+# y = []
+
+
+# with open('22-matplotlib-datos.txt') as csvfile:
+# 	plots = csv.reader(csvfile, delimiter=',')
+
+# 	for row in plots:
+# 		x.append(int(row[0]))
+# 		y.append(int(row[1]))
+
+# plt.plot(x,y,label='Cargado desde archivo')
+# plt.show()
+
+'''via 2: numpy'''
+x,y = np.loadtxt('22-matplotlib-datos.txt', delimiter=',', unpack=True)
+plt.plot(x,y,label='Cargado desde archivo')
+
+plt.xlabel('Numeros en X')
+plt.ylabel('Variable importante en Y')
+plt.title('Titulo del grafico\n subtitulo aqui')
+
+plt.legend()
+plt.show()
